@@ -32,7 +32,7 @@ jobs:
         run: ./gradlew applyPatches
       
       - name: Build
-        run: ./gradlew build
+        run: ./gradlew build shadowJar
       
       - name: List Build Artifacts (for Debugging)
         run: ls -la build/libs
@@ -41,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-app-jar
-          path: build/libs/*.jar  # Adjust this path based on where your JAR is generated
+          path: build/libs/my-app-jar-all.jar  # Adjust this path based on where your JAR is generated
